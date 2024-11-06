@@ -170,11 +170,36 @@ printVehicle(oldCivic);
 
   class Vehicle2 {
 
-   drive():void{
+   constructor(public color:string){
+
+   }
+
+   protected drive():void{
     console.log('Chuga chuga');
+   }
+
+  public honk():void{
+      console.log('beep');
    }
   }
 
+
+  class Car2 extends Vehicle2 {
+
+
+   //Is a special method to initialize an obj when its created
+   constructor(public wheels : number , color:string){
+      super(color);
+   }
+
+   drive():void{
+      console.log('Vroom');
+     }
+  }
+
+  const car2 = new Car2(4,'red');
+
+  car2.drive();
 
 
 
